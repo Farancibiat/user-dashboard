@@ -22,6 +22,15 @@ const injectContext = PassedComponent => {
         );
 
         useEffect(() => {
+            let path=window.location.href.split("/")[3]
+            if(path.localeCompare("user")===0)
+            path="2"
+            else if(path.localeCompare("contactList")===0)
+            path="3"
+            else
+            path="1"
+            console.log(path)
+            state.actions.setMenuActiveItem(path)
             state.actions.getUsers()
                 }, []);
         // the context will now have a getStore, getActions and setStore functions available, because they were declared
