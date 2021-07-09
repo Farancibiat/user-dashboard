@@ -29,7 +29,7 @@ const injectContext = PassedComponent => {
             path="3"
             else
             path="1"
-            console.log(path)
+            
             state.actions.setMenuActiveItem(path)
             state.actions.getUsers()
                 }, []);

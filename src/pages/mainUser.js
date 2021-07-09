@@ -8,9 +8,9 @@ export const MainUser = () => {
     <>
       {store.loadState ? (
         <div>
-          <div>Nombre: {store.users[0]['name']}</div>
-          <div>Fono: {store.users[0]['phone']}</div>
-          <div>E-mail: {store.users[0]['email']}</div>
+          <div>Nombre: {store.profile[0]['name']}</div>
+          <div>Fono: {store.profile[0]['phone']}</div>
+          <div>E-mail: {store.profile[0]['email']}</div>
         </div>
       ) : (
         <></>
