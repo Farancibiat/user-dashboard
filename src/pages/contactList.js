@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Button, List, Avatar, Col, Row } from "antd";
 import { Context } from "../store/appContext";
-import {Contact} from "./Contact";
+import {Contact} from "../components/Contact";
 
 
 
@@ -34,7 +34,7 @@ export const DescriptionItem = ({ title, content }) => {
 
     return (<>
       <Row style={{marginTop:30, marginBottom:60}}>
-        <Col xs={0} sm={6}></Col>
+        <Col xs={0} sm={6}/>
         <Col xs={24}lg={12}>
         <List dataSource={store.users}
           bordered
@@ -61,7 +61,7 @@ export const DescriptionItem = ({ title, content }) => {
           )}
         />
         </Col>
-        <Col xs={0} sm={6}></Col>
+        <Col xs={0} sm={6}/>
         {store.modalVisible?<Contact/>:<></>}
         
        </Row>

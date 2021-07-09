@@ -1,14 +1,22 @@
 
 import React from "react";
-import { Button } from "antd";
-
+import { Button, Result } from "antd";
+import {Link} from 'react-router-dom'
 export const Home = () => {
     return (
         <>
-        <div>Wellcome Gallegos</div>
-        <Button type="primary" style={{ marginLeft: 8 }}>
-      Yeah
-    </Button>
+        <Result
+    status="success"
+    title="¡Bienvenid@!"
+    subTitle={`"Login" exitoso"`}
+    extra={[
+        <Link to="/contactList">
+      <Button type="primary" key="console">
+        Ir a Agenda
+      </Button></Link>,
+      <Link to="/user">
+      <Button key="buy">Ver Perfil</Button></Link>]}
+      />
         </>
     );
 };

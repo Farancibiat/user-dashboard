@@ -6,16 +6,23 @@ const getState = ({ getStore, getActions, setStore }) => {
       users: [],
       loadState: false,
       menuActiveItem: "1",
-      titles: ["¡Bienvenido!", "Perfil", "Agenda"],
+      titles: ["¡Bienvenid@!", "Perfil", "Agenda"],
       activeContact:[],
       modalVisible: false,
+      profile:{},
     },
     actions: {
       getUsers: () => {
         axios
-          .get("https://jsonplaceholder.typicode.com/users")
+          .get("https://jsonplaceholder.typicode.com/users", {headers: {
+            'Access-Control-Allow-Origin':'*',
+            'Access-Control-Allow-Methods': 'GET',
+            'Access-Control-Allow-Headers':'*',
+            'cache-control': 'no-cache'
+        }})
           .then((res) => {
             setStore({profile:res.data.splice(0,1)})
+            console.log(getStore().profile)
             let aux = res.data.sort(function compare(a, b) {
               if (a.name.localeCompare(b.name)<0) {
                 return -1;

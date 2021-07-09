@@ -3,9 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./components/scrollToTop";
 import injectContext from "./store/appContext";
 
-import "./styles/app.css";
 import { Home } from "./pages/home";
-import { Contact } from "./pages/Contact";
 import { ContactList } from "./pages/contactList";
 import { MainUser } from "./pages/mainUser";
 import { WebDesign } from "./components/webdesign";
@@ -17,8 +15,9 @@ const Layout = () => {
 
   return (
     <BrowserRouter basename={basename}>
-      <WebDesign>
+      
         <ScrollToTop>
+        <WebDesign>
           <Switch>
             <Route exact path="/">
               <Home />
@@ -34,13 +33,9 @@ const Layout = () => {
               <ContactList />
             </Route>
           </Switch>
-          <Switch>
-            <Route exact path="/contactList/:id">
-              <Contact />
-            </Route>
-          </Switch>
+          </WebDesign>
         </ScrollToTop>
-      </WebDesign>
+      
     </BrowserRouter>
   );
 };

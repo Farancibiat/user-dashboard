@@ -14,7 +14,7 @@ export const WebDesign = (props) => {
   };
 
   return (
-    <Layout style={{ minHeight: "100vh" }}>
+    <Layout >
       <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
         <div className="logo" />
         <Menu
@@ -33,14 +33,14 @@ export const WebDesign = (props) => {
           <Menu.Item key="2" onClick={(e) => actions.setMenuActiveItem(e.key)}>
             <Link to="/user">
               <Icon type="user" />
-              <span>Perfil de Usuario</span>
+              <span>Perfil</span>
             </Link>
           </Menu.Item>
 
           <Menu.Item key="3" onClick={(e) => actions.setMenuActiveItem(e.key)}>
             <Link to="/contactList">
               <Icon type="contacts" />
-              <span>Agenda de Contactos</span>
+              <span>Agenda</span>
             </Link>
           </Menu.Item>
         </Menu>
@@ -51,7 +51,7 @@ export const WebDesign = (props) => {
           {props.children}
           </Content>
         <Footer style={{ textAlign: "center", }}>
-          Created by <a href="http://farancibiat.cl">Felipe Arancibia</a> 2021
+          Created by <a target="_blank" href="http://farancibiat.cl">Felipe Arancibia</a> 2021
         </Footer>
       </Layout>
     </Layout>
