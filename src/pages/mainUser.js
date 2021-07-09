@@ -24,8 +24,10 @@ export const MainUser = () => {
                 </Descriptions.Item>
                 <Descriptions.Item label="Dirección" span={2}>
                   {
+                    // this anchor goes to google maps with latitude and longitude
                     <a
                       target="_blank"
+                      rel="noreferrer"
                       href={`https://www.google.com/maps/search/?api=1&query=${store.profile[0].address.geo.lat},${store.profile[0].address.geo.lng}`}
                     >{`${store.profile[0].address.street}, ${store.profile[0].address.suite}`}</a>
                   }

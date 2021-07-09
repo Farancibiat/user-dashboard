@@ -51,7 +51,7 @@ export const WebDesign = (props) => {
           {props.children}
           </Content>
         <Footer style={{ textAlign: "center", }}>
-          Created by <a target="_blank" href="http://farancibiat.cl">Felipe Arancibia</a> 2021
+          Created by <a target="_blank" rel="noreferrer" href="http://farancibiat.cl">Felipe Arancibia</a> 2021
         </Footer>
       </Layout>
     </Layout>

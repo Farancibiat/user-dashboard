@@ -1,10 +1,10 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { Button, List, Avatar, Col, Row } from "antd";
 import { Context } from "../store/appContext";
 import {Contact} from "../components/Contact";
 
 
-
+// this function it's a style definition for contact info
 export const DescriptionItem = ({ title, content }) => {
     return (
       <div
@@ -62,6 +62,8 @@ export const DescriptionItem = ({ title, content }) => {
         />
         </Col>
         <Col xs={0} sm={6}/>
+        
+        {/* this line it's for modal renderization */}
         {store.modalVisible?<Contact/>:<></>}
         
        </Row>
