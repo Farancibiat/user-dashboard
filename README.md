@@ -1,5 +1,5 @@
 # Basic Agenda Dashboard 
-![Dashboard Preview](https://github.com/Farancibiat/pokemon-site/blob/develop/src/img/preview.png?raw=true)
+![Dashboard Preview](https://github.com/Farancibiat/user-dashboard/blob/develop/src/img/preview.png?raw=true)
 This project was developed for a job apply test, the project it's a basic dashboard using Ant Design, reading a free fake API https://jsonplaceholder.typicode.com/
 
 
