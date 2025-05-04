@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/scrollToTop";
 import injectContext from "./store/appContext";
 
@@ -14,28 +14,16 @@ const Layout = () => {
   const basename = process.env.BASENAME || "";
 
   return (
-    <BrowserRouter basename={basename}>
-      
-        <ScrollToTop>
+    <BrowserRouter basename={basename} future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <ScrollToTop>
         <WebDesign>
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-          </Switch>
-          <Switch>
-            <Route exact path="/user">
-              <MainUser />
-            </Route>
-          </Switch>
-          <Switch>
-            <Route exact path="/contactList">
-              <ContactList />
-            </Route>
-          </Switch>
-          </WebDesign>
-        </ScrollToTop>
-      
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/user" element={<MainUser />} />
+            <Route path="/contactList" element={<ContactList />} />
+          </Routes>
+        </WebDesign>
+      </ScrollToTop>
     </BrowserRouter>
   );
 };

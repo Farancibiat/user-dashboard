@@ -1,7 +1,8 @@
 import React, { useState, useContext } from "react";
-import { Layout, Menu, Icon } from "antd";
+import { Layout, Menu } from "antd";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import { HomeOutlined, UserOutlined, ContactsOutlined } from "@ant-design/icons";
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -13,6 +14,27 @@ export const WebDesign = (props) => {
     setCollapsed(isCollapsed);
   };
 
+  const menuItems = [
+    {
+      key: "1",
+      icon: <HomeOutlined />,
+      label: <Link to="/">Inicio</Link>,
+      onClick: (e) => actions.setMenuActiveItem(e.key),
+    },
+    {
+      key: "2",
+      icon: <UserOutlined />,
+      label: <Link to="/user">Perfil</Link>,
+      onClick: (e) => actions.setMenuActiveItem(e.key),
+    },
+    {
+      key: "3",
+      icon: <ContactsOutlined />,
+      label: <Link to="/contactList">Agenda</Link>,
+      onClick: (e) => actions.setMenuActiveItem(e.key),
+    },
+  ];
+
   return (
     <Layout >
       <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
@@ -22,28 +44,8 @@ export const WebDesign = (props) => {
           style={{ minHeight: "100vh" }}
           selectedKeys={[store.menuActiveItem]}
           mode="inline"
-        >
-          <Menu.Item key="1" onClick={(e) => actions.setMenuActiveItem(e.key)}>
-            <Link to="/">
-              <Icon type="home" />
-              <span>Inicio</span>
-            </Link>
-          </Menu.Item>
-
-          <Menu.Item key="2" onClick={(e) => actions.setMenuActiveItem(e.key)}>
-            <Link to="/user">
-              <Icon type="user" />
-              <span>Perfil</span>
-            </Link>
-          </Menu.Item>
-
-          <Menu.Item key="3" onClick={(e) => actions.setMenuActiveItem(e.key)}>
-            <Link to="/contactList">
-              <Icon type="contacts" />
-              <span>Agenda</span>
-            </Link>
-          </Menu.Item>
-        </Menu>
+          items={menuItems}
+        />
       </Sider>
       <Layout>
         <Header style={{ background: "#f0ad4e"}} ><h1 style={{fontSize:"2em", color:"#d9534f"}}>{store.titles[parseInt(store.menuActiveItem)-1]}</h1></Header>
